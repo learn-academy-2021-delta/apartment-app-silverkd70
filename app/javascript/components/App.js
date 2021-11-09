@@ -1,9 +1,8 @@
 import React, { Component } from "react"
 import Header from './components/Header'
-import Footer from './components/Footer'
 import Home from './pages/Home'
+import Footer from './components/Footer'
 import ApartIndex from './pages/ApartIndex'
-import mockAparts from './mockAparts.js'
 import PropTypes from "prop-types"
 
 import {
@@ -17,19 +16,27 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      apts: mockAparts
+      apartments: []
     }
   }
+  componentDidMount(){
+    this.readApartment()
+  }
+  readApartment = () => {
+    fetch("/apartments")
+    .then(response => response.json())
+    .then(apartmentsArray => this.setState({apartments: apartmentsArray}))
+    .catch(errors => console.log("Apartment read errors:", errors))
+  }
   render () {
+    const { apartments } = this.state
     return (
       <div>
       <Router>
         <Header {...this.props} />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/" element={<Header />} />
-          <Route path="/apartindex" element={<ApartIndex apts={this.state.apts} />} />
-          <Route exact path="/" element={<Footer />} />
+          <Route path="/ApartIndex" element={<ApartIndex apartments={apartments} />} />
         </Routes>
         <Footer />
       </Router>
