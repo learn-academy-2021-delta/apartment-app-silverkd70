@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_11_04_220259) do
     t.string "price"
     t.integer "bedrooms"
     t.integer "bathrooms"
-    t.boolean "pets"
+    t.string "pets"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

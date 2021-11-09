@@ -10,7 +10,7 @@
 header {
     font-size: 15px;
     text-align: center;
-    background-color: darkgray;
+    background-color: rgb(159, 83, 83);
     color: darkgoldenrod;
     display: flex;
     position: relative;
@@ -19,17 +19,31 @@ header {
     justify-content: space-between;
 }
 
-.nav-links {
-    margin: 10px;
-    color:lightblue;
+.btn-sm {
+    margin: 6px;
+    color:rgb(29, 36, 167);
+    display: flex;
+    flex-direction: row;
+    align-items: inherit;
+    padding-right: 20px;
+}
+
+.btn-secondary {
+    margin: 6px;
+    color:rgb(29, 36, 167);
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    padding-right: 30px;
+    padding-right: 10px;
 }
 
-.nav-link:hover {
-    text-shadow: mintcream;
+.nav-links {
+    margin: 10px;
+    color:rgb(29, 36, 167);
+    display: flex;
+    flex-direction: row;
+    align-items: inherit;
+    padding-right: 30px;
 }
 
 .logo {
@@ -49,7 +63,7 @@ header {
     position: flex;
     bottom: 0;
     width: 100%;
-    background-color: #d3d3d3;
+    background-color: rgb(159, 83, 83);
     display: flex;
     justify-content: space-around;
     padding-top: 10px;

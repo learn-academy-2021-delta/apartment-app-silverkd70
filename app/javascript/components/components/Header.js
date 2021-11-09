@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { NavLink } from 'react-router-dom'
 import aptLogo from '../assets/apt-logo.png'
+import { Button } from 'reactstrap'
 
 
 class Header extends Component {
@@ -10,30 +11,52 @@ class Header extends Component {
         } = this.props
     return(
         <header>
-            <NavLink to="/">
              <img src={aptLogo} alt="Apartment logo" className="apt-logo"/>
-            </NavLink>
             <div className="nav-links">
                 <ul>
-                    <li>Apartment Listings</li>
+                    <NavLink to="/">
+                    <button type="button" class="btn-sm">Home</button>
+                    </NavLink>
                 </ul>
+            
+                <ul>
+                    <NavLink to="/apartIndex">
+                    <button type="button" class="btn-sm">APARTment Listings</button>
+                    </NavLink>
+                </ul>
+                <ul>
+                {logged_in &&
+                    <NavLink to="aptNew">
+                    <button type="button" class="btn-sm">Add a new APARTment Listing</button>
+                    </NavLink>
+                }
+                </ul>
+            </div>
+            
                 {!logged_in &&
-                 <>
+            <div class="btn-group-sm" role="group" aria-label="Basic example">
                     <ul>  
-                        <a href={new_user_route}>Get Signed Up</a>
+                        <a href={new_user_route}>
+                        <button type="button" class="btn-secondary">Get Signed Up</button>
+                        </a>
                     </ul>
                     <ul>
-                        <a href={sign_in_route}>Sign In</a>
-                    </ul>
-                 </>
+                        <a href={sign_in_route}>
+                        <button type="button" class="btn-secondary">Sign In</button>
+                        </a>
+                    </ul> 
+            </div>
                 }
 
                 {logged_in &&
                     <ul>
-                        <a href={sign_out_route}>Sign Out</a>
+                        <a href={sign_out_route}>
+                        <button type="button" class="btn-sm">Sign Out</button>
+                        </a>
                     </ul>
+                    
                 }
-            </div>
+            
         </header>
     )
   }
