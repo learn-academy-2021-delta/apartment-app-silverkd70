@@ -1,25 +1,28 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
 import { Card, CardTitle, Col } from 'reactstrap'
+
+
+
 
 class ApartIndex extends Component {
   render() {
+      const { apartments } = this.props
     return (
     <div className="page-body">
-        <h3>I Am The APARTment Index</h3>
+        <h3>The APARTments List</h3>
         <br />
             <Col sm="6">
-                {this.props.apts.map(apt => {
+                {apartments && apartments.map(apartment => {
                     return (
-                        <Card body key={apt.id}>
+                        <Card body key={apartment.id} className="card-body">
                             <CardTitle>
                                 <ol>Location</ol>
-                                    <ol>{apt.street}</ol>
-                                    <ol>{apt.city}</ol>
-                                    <ol>{apt.state}</ol>
+                                    <ol>{apartment.street}</ol>
+                                    <ol>{apartment.city}, {apartment.state}</ol>
+                                    
                                 <ul>Manager</ul>
-                                    <li>{apt.manager}</li>
-                                    <li>{apt.email}</li>
+                                    <ol>{apartment.manager}</ol>
+                                    <li>{apartment.email}</li>
                             </CardTitle>
                         </Card>
                      )

@@ -34,7 +34,7 @@ class Header extends Component {
             </div>
             
                 {!logged_in &&
-            <div class="btn-group-sm" role="group" aria-label="Basic example">
+                 <div>
                     <ul>  
                         <a href={new_user_route}>
                         <button type="button" class="btn-secondary">Get Signed Up</button>
@@ -45,7 +45,7 @@ class Header extends Component {
                         <button type="button" class="btn-secondary">Sign In</button>
                         </a>
                     </ul> 
-            </div>
+                 </div>
                 }
 
                 {logged_in &&

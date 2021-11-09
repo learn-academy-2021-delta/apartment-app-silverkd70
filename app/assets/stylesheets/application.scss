@@ -30,11 +30,11 @@ header {
 
 .btn-secondary {
     margin: 6px;
-    color:rgb(29, 36, 167);
+    color:white;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    padding-right: 10px;
+    padding-right: 5px;
 }
 
 .nav-links {
@@ -56,6 +56,27 @@ header {
     font-family: Verdana;
     margin: 3rem;
     height: 110vh;
+  }
+
+  .cardtitle {
+    text-align: left;
+    border: 1px solid black;
+    padding: 40px;
+    border: 1px solid black;
+  }
+  .cardtitle {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .card-body {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 300px;
+    background-color: rgb(222, 185, 91);
+    margin: 20px;
+    
   }
 
   footer {
